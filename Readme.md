@@ -25,7 +25,7 @@ podman stop open-webui
 podman start open-webui
 ```
 ### Settings > Connection > Give url of your ollama deployment
-![ollamarunning](ollama/open-webui/images/ollama1.png)
+![ollamarunning](images/ollama1.png)
 https://ollama-open-webui.apps.cluster-882w8.dynamic.redhatworkshops.io:443
 
 ### Crate repo on quay.io and make it public before pushing
