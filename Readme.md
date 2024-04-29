@@ -19,15 +19,16 @@ oc delete project open-webui
 ```
 # Run locally on mac
 ```sh 
-podman run -d -p 3000:8080 -e OLLAMA_BASE_URL=http://ollama-route-ollama.apps.cluster-882w8.dynamic.redhatworkshops.io -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main
+podman run -d -p 3000:8080 -e OLLAMA_BASE_URL=http://<ollama-url> -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main
 
 podman stop open-webui
 podman start open-webui
 ```
-### Settings > Connection > Give url of your ollama deployment
-![ollamarunning](images/ollama1.png)
-https://ollama-open-webui.apps.cluster-882w8.dynamic.redhatworkshops.io:443
+### Settings for open-webui
+Settings > Connection > Give url of your ollama deployment.  
 
-### Crate repo on quay.io and make it public before pushing
-podman commit open-webui quay.io/arslankhanali/open-webui:latest
-podman push quay.io/arslankhanali/open-webui:latests
+#### Verify ollama is running
+![ollamarunning](images/ollama1.png)
+or  
+curl http://<url>:11434 
+
