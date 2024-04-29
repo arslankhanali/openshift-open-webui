@@ -30,5 +30,5 @@ Settings > Connection > Give url of your ollama deployment.
 #### Verify ollama is running
 ![ollamarunning](images/ollama1.png)
 or  
-curl http://<url>:11434 
+curl http://url:11434 
 
