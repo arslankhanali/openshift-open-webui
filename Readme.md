@@ -9,8 +9,15 @@ oc new-project open-webui
 oc adm policy add-scc-to-user anyuid -z default   
 # Deploy the helm chart                  
 helm install open-webui ./kubernetes/helm 
+
+# Port Forward service to your laptop
+oc port-forward svc/open-webui 8080:80
+# You can access it on localhost:8080
+
+# or, to publically access the service
 # Create route
 oc create route edge --service open-webui 
+
 # Get route
 oc get routes.route.openshift.io open-webui -o json | jq -r '.spec.host' | sed 's/^/https:\/\//'
 # To ROLLBACK!
